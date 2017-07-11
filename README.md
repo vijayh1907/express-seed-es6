@@ -1,6 +1,6 @@
 # express-seed-es6
 
-This is my opinionated starter for an express web app. It uses Babel as a transpiler.
+This is my opinionated starter for an express web app. In order to leverage the latest version of JS(ES6) It uses Babel as a transpiler.
 
 ## Setup
 
