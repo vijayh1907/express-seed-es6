@@ -8,6 +8,7 @@ Commands to run after installing node & npm
 
 * `npm install`: Install dependencies
 * `npm start`: Launch the server
+* `npm install -g @angular/cli`: To install the Angular CLI
 
 ### Project structure
 
@@ -37,3 +38,13 @@ app/api/                         * Every web services
     ├── hello.router.js          * Set routes to controller methods
     └── hello.service.js         * The logic of the web service
 ```
+### Front End
+
+#To Run App -
+- cd into the app
+- npm install
+- ng serve / ng serve --host=0.0.0.0 --port=xxxx
+
+#To Build App -
+- cd into app
+- ng build
