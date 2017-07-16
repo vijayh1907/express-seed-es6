@@ -1,9 +1,9 @@
 import express from 'express';
 
-import helloRouter from './api/hello/hello.router.js';
+import employeeRouter from './api/employee/employee.router.js';
 
 let router = new express.Router();
 
-router.use('/hello', helloRouter);
+router.use('/employees', employeeRouter);
 
 export default router;

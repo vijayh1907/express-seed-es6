@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node bootstrap-app.js"
+    "start": "nodemon bootstrap-app.js"
   },
   "author": "Vijay Hudge",
   "license": "ISC",
@@ -14,7 +14,9 @@
     "cors": "^2.5.3",
     "express": "^4.12.3",
     "media-typer": "^0.3.0",
-    "mime-types": "^2.0.10"
+    "mime-types": "^2.0.10",
+    "pg": "^6.4.1",
+    "pg-format": "^1.0.4"
   },
   "devDependencies": {
     "jasmine-node": "^2.0.0",

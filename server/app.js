@@ -11,14 +11,14 @@ app.use(cors());
 
 app.use(express.static('./client/public'));
 
-app.get('/', function (req, res) {
- 	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api', apiRouter);
 
-app.listen(app.get('port'), function() {
-    console.log('Express server listening at http://localhost:' + app.get('port'));
+app.listen(app.get('port'), () => {
+	console.log('Express server listening at http://localhost:' + app.get('port'));
 });
