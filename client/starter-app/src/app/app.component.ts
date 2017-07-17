@@ -17,7 +17,7 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this.http.get('http://localhost:8080/api/hello')
+    this.http.get('http://localhost:8080/api/employees')
     .subscribe((res:Response)=>{
       this.httpResponse=res.json().text;
     })
