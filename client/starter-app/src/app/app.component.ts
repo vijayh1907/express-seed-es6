@@ -9,7 +9,7 @@ import { Http, Response } from '@angular/http';
 })
 export class AppComponent {
 
-  title = 'app works!!!!!!!!!!';
+  title = 'E-Wallet Dashboard';
   httpResponse:any;
 
   constructor(private http:Http){

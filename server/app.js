@@ -9,10 +9,10 @@ let app = express();
 app.set('port', process.env.PORT || 8080);
 app.use(cors());
 
-app.use(express.static('./client/public'));
+app.use(express.static('./client/starter-app/dist'));
 
 app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, 'client/public', 'index.html'));
+	res.sendFile(path.join(__dirname, 'client/starter-app/dist', 'index.html'));
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
