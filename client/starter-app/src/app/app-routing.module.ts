@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {AppComponent} from './app.component';
 import { LoginComponent } from './views/pages/login/login.component';
 // import { RegisterComponent } from './views/pages/register/register.component';
+import {TopNavComponent} from './views/components/top-nav/top-nav.component'
 import { EWalletComponent } from './views/pages/e-wallet/e-wallet.component';
 import { ProfileComponent } from './views/pages/e-wallet/profile/profile.component';
 import { TransactionComponent } from './views/pages/e-wallet/transaction/transaction.component';
@@ -18,11 +19,17 @@ export const routes: Routes = [
     // { path: '', redirectTo: 'about', pathMatch: 'full' }
     // children: []
   // }
+  {
+          path: '', component: TopNavComponent, children: [
+            // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
+    { path: 'ewallet', component: EWalletComponent },    
     { path: 'addMoney', component: AddMoneyComponent },
     { path: 'requestMoney', component: RequestMoneyComponent },
     { path: 'sendMoney', component: SendMoneyComponent },
     { path: 'notification', component: NotificationComponent }
+          ]
+  }
 ];
 
 @NgModule({
