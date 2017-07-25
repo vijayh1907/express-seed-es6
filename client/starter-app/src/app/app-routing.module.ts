@@ -14,7 +14,7 @@ import { SendMoneyComponent } from './views/pages/send-money/send-money.componen
 import { NotificationComponent } from './views/pages/notification/notification.component';
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
-export const routes: Routes = [
+ const routes: Routes = [
   // {
     // { path: '', redirectTo: 'about', pathMatch: 'full' }
     // children: []
@@ -22,7 +22,7 @@ export const routes: Routes = [
   {
           path: '', component: TopNavComponent, children: [
             // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
+    // { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
     { path: 'ewallet', component: EWalletComponent },    
     { path: 'addMoney', component: AddMoneyComponent },
     { path: 'requestMoney', component: RequestMoneyComponent },
