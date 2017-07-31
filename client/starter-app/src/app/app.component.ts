@@ -11,6 +11,8 @@ export class AppComponent {
 
   title = 'E-Wallet Dashboard';
   httpResponse:any;
+  result = true;
+  
 
   constructor(private http:Http){
 

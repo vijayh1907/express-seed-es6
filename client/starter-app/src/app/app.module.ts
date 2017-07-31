@@ -17,6 +17,8 @@ import { RequestMoneyComponent } from './views/pages/request-money/request-money
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
+import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
+import { SideBarComponent } from './views/components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TopNavComponent } from './views/components/top-nav/top-nav.component';
     RequestMoneyComponent,
     SendMoneyComponent,
     NotificationComponent,
-    TopNavComponent
+    TopNavComponent,
+    NavTabsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,

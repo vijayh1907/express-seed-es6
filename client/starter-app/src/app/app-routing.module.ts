@@ -15,21 +15,13 @@ import { NotificationComponent } from './views/pages/notification/notification.c
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
  const routes: Routes = [
-  // {
-    // { path: '', redirectTo: 'about', pathMatch: 'full' }
-    // children: []
-  // }
-  {
-          path: '', component: TopNavComponent, children: [
-            // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    // { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
-    { path: 'ewallet', component: EWalletComponent },    
-    { path: 'addMoney', component: AddMoneyComponent },
-    { path: 'requestMoney', component: RequestMoneyComponent },
-    { path: 'sendMoney', component: SendMoneyComponent },
-    { path: 'notification', component: NotificationComponent }
-          ]
-  }
+ 
+  { path:'',redirectTo:'transaction', pathMatch:'full'},
+  { path: 'transaction', component: TransactionComponent},
+  { path: 'add-money', component: AddMoneyComponent},
+  { path: 'send-money', component: SendMoneyComponent},
+  { path: 'request-money', component: RequestMoneyComponent}
+
 ];
 
 @NgModule({
