@@ -19,20 +19,21 @@
               <tbody *ngFor="let history of History">
                 <tr class="media" id="carga_30" data-id="30">
                   <td class="media-left">
-                    <h4>{{history.date}}</h4>
+                    <h4>{{history.created_at | date : sho}}</h4>
                   </td>
                   <td class="media-body">
-                    <h4 class="media-heading font-yellow text-bold"><strong>Transaction ID: </strong>{{history.transaction_id}}</h4>
-                    <span *ngIf = "history.transaction_type === 1; else other_content">
+                  <div *ngIf = "history.status === 1">
+                    <h4 class="media-heading font-yellow text-bold"><strong>To: </strong>{{history.reciever_name}}</h4>
                     <span class="label label-danger">Debit</span>
-                    <span><strong>To:</strong> {{history.reciever_name}}</span>
-                    </span>
+                    <span><strong>Transaction ID:</strong> {{history.transaction_id}}</span>
                     <ng-template #other_content>
                     <span><span class="label label-success">Credit</span></span>
                     <span><strong>From:</strong> {{history.sender_name}}</span>
                     </ng-template>
                     <span><strong>Amount:</strong>{{history.amount}}</span>
-                  </td>   </tr>
+                  </div>
+                  </td>   
+                </tr>
               </tbody>
             </table>
     </div>

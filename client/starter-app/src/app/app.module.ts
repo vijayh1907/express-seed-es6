@@ -17,6 +17,7 @@ import { RequestMoneyComponent } from './views/pages/request-money/request-money
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
+import { HistoryService } from './dashboard/transaction-history/history.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { TopNavComponent } from './views/components/top-nav/top-nav.component';
     AppRoutingModule,
     // routes
   ],
-  providers: [],
+  providers: [HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

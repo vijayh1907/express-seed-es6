@@ -13,6 +13,7 @@ import { RequestMoneyComponent } from './views/pages/request-money/request-money
 import { TransactionHistoryComponent } from "./dashboard/transaction-history/transaction-history.component"
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
+import {HttpClientModule} from '@angular/common/http';
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
  const routes: Routes = [
@@ -32,7 +33,7 @@ import { NotificationComponent } from './views/pages/notification/notification.c
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule ],
   exports: [RouterModule]
 })
 
