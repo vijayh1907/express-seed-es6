@@ -10,26 +10,25 @@ import { ProfileComponent } from './views/pages/e-wallet/profile/profile.compone
 import { TransactionComponent } from './views/pages/e-wallet/transaction/transaction.component';
 import { AddMoneyComponent } from './views/pages/add-money/add-money.component';
 import { RequestMoneyComponent } from './views/pages/request-money/request-money.component';
+import { TransactionHistoryComponent } from "./dashboard/transaction-history/transaction-history.component"
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
  const routes: Routes = [
   // {
-    // { path: '', redirectTo: 'about', pathMatch: 'full' }
-    // children: []
+   // { path: '', redirectTo: 'about', pathMatch: 'full' }
+   // children: []
   // }
-  {
-          path: '', component: TopNavComponent, children: [
-            // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  {path: '', redirectTo: 'transactions', pathMatch: 'full'},
+    // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     // { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
-    { path: 'ewallet', component: EWalletComponent },    
-    { path: 'addMoney', component: AddMoneyComponent },
-    { path: 'requestMoney', component: RequestMoneyComponent },
-    { path: 'sendMoney', component: SendMoneyComponent },
-    { path: 'notification', component: NotificationComponent }
-          ]
-  }
+  { path: 'ewallet', component: EWalletComponent },    
+  { path: 'addMoney', component: AddMoneyComponent },
+  { path: 'requestMoney', component: RequestMoneyComponent },
+  { path: 'sendMoney', component: SendMoneyComponent },
+  { path: 'notification', component: NotificationComponent },
+  { path: 'transactions', component: TransactionHistoryComponent }
 ];
 
 @NgModule({
