@@ -28,24 +28,24 @@ const HISTORY: History[]=[
 })
 export class TransactionHistoryComponent implements OnInit {
   title='Transaction History';
-  History=HISTORY;
+  History = HISTORY;
    selectedHistory: History;
 
 
-  // onSelectHistory(history:History){
-  // this.selectedHistory=history;
-  // };
+  onSelectHistory(history:History){
+  this.selectedHistory=history;
+  };
   
   // loadTransaction() {
-  //     this.historyService.getTransactions()
-  //       .then(data => {this.History = data.transaction; console.log(this.History)});
-  //   }
+      // this.historyService.getTransactions()
+        // .then(data => {this.History = data.transaction; console.log(this.History)});
+    // }
 
   constructor( private historyService : HistoryService) { }
 
   ngOnInit() {
     // this.loadTransaction();
-    console.log(HISTORY);
+    // console.log(HISTORY);
   }
 
 }

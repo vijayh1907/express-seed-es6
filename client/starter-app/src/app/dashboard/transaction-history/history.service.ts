@@ -22,7 +22,7 @@ export class HistoryService {
     }
 
     getTransactions() {
-    	return this.http.get('http://10.0.1.62:8080/api/transaction')
+    	return this.http.get('http://10.0.1.62:8080/api/transactions')
     		.toPromise()
     		.then(this.extractData)
     		.catch(this.handleError);
@@ -30,6 +30,7 @@ export class HistoryService {
 
   private extractData(res: Response) {
     let body = res.json();
+    console.log(body);
     return body || {};
   }
 
