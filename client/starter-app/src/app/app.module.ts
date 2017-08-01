@@ -21,8 +21,12 @@ import { NotificationComponent } from './views/pages/notification/notification.c
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
+<<<<<<< Updated upstream
 
 
+=======
+import { LoginService } from './views/pages/login/login.services';
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +54,7 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
     ReactiveFormsModule
     // routes
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
