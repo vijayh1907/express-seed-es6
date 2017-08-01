@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CustomFormsModule } from 'ng2-validation';
 // import {routes} from './app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { NotificationComponent } from './views/pages/notification/notification.c
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    CustomFormsModule,
+    ReactiveFormsModule
     // routes
   ],
   providers: [],
