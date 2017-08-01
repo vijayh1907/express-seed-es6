@@ -12,20 +12,20 @@ import { AddMoneyComponent } from './views/pages/add-money/add-money.component';
 import { RequestMoneyComponent } from './views/pages/request-money/request-money.component';
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
+import {HttpClientModule} from '@angular/common/http';
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
  const routes: Routes = [
- 
+   
   { path:'',redirectTo:'transaction', pathMatch:'full'},
   { path: 'transaction', component: TransactionComponent},
   { path: 'add-money', component: AddMoneyComponent},
   { path: 'send-money', component: SendMoneyComponent},
   { path: 'request-money', component: RequestMoneyComponent}
-
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), HttpClientModule ],
   exports: [RouterModule]
 })
 
