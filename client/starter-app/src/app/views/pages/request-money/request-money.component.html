@@ -6,19 +6,17 @@
     <div class = "formcontent">
     <p class = "heading">
 <B>REQUEST FOR MONEY</B></p>
-<form [formGroup]="requestForm" (ngSubmit)="request(requestForm.value, requestForm.valid)">
+<form [formGroup]="requestForm" (ngSubmit)="request(requestForm)">
     
     <input type="text" id="sender" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required>
-    <div [hidden]=requestForm.controls.emailphone.pristine>
-    <div [hidden]=requestForm.controls.emailphone.valid class="alert alert-danger">Please enter valid email or phone number!</div></div>
+    <div *ngIf="requestForm.controls.emailphone.invalid&&requestForm.controls.emailphone.dirty" class="alert alert-danger">Please enter valid email or phone number!</div>
     <br>
     
     <input type="text" id="requestamount" class="form-control" formControlName="requestamount" placeholder="Enter amount to be requested">
-    <div [hidden]=requestForm.controls.requestamount.pristine>
-    <div [hidden]=requestForm.controls.requestamount.valid class="alert alert-danger">Please enter amount!</div></div>
+    <div *ngIf="requestForm.controls.requestamount.invalid&&requestForm.controls.requestamount.dirty" class="alert alert-danger">Please enter amount!</div>
     <br>
     
-    <input type="submit" name="request" class="requestButton" value="REQUEST">
+    <input [disabled]=requestForm.invalid type="submit" name="request" class="requestButton" value="REQUEST">
 </form>
 </div>
 </div>

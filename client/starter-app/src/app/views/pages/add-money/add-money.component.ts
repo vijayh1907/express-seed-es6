@@ -15,17 +15,13 @@ export class AddMoneyComponent implements OnInit {
 
   constructor(public router : Router, public fb: FormBuilder) { }
     
-  add(value ,validity) {
+  add(form) {
     
-    if(!validity){
-      alert("Please enter all fields correctly!");
+    if(form.invalid){
       return;
-      
-    }
-   
-    console.log(value);
-    console.log(this.addForm.value);
-    this.router.navigate(['./']);
+      }
+    
+  this.router.navigate(['./']);
   }
 
 ngOnInit() {

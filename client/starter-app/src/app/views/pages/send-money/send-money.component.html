@@ -5,17 +5,15 @@
     <div class = "formcontent">
     <p class = "heading">
 <B>SEND MONEY</B></p>
-<form [formGroup]="sendForm" (ngSubmit)="send(sendForm.value, sendForm.valid)">
+<form [formGroup]="sendForm" (ngSubmit)="send(sendForm)">
     <input type="text" id="receiver" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required> 
-    <div [hidden]=sendForm.controls.emailphone.pristine>
-    <div [hidden]=sendForm.controls.emailphone.valid class="alert alert-danger">Please enter valid email or phone number!</div></div>
+    <div *ngIf="sendForm.controls.emailphone.dirty&&sendForm.controls.emailphone.invalid" class="alert alert-danger">Please enter valid email or phone number!</div>
     <br>
 
     <input type="text" id="sendamount" class="form-control" formControlName="sendamount" placeholder="Enter amount to be sent">
-    <div [hidden]=sendForm.controls.sendamount.pristine>
-    <div [hidden]=sendForm.controls.sendamount.valid class="alert alert-danger">Please enter amount below 10000!</div></div>
+    <div *ngIf="sendForm.controls.sendamount.dirty&&sendForm.controls.sendamount.invalid" class="alert alert-danger">Please enter amount below 10000!</div>
     <br>
-	<input type="submit" name="send" class="sendButton" value="SEND">
+	<input [disabled]=sendForm.invalid type="submit" name="send" class="sendButton" value="SEND">
 </form>
 </div>
 </div>

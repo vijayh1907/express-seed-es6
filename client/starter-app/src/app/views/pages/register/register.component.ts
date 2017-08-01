@@ -21,15 +21,12 @@ export class RegisterComponent implements OnInit {
     public fb: FormBuilder
   ) { }
     
-  Register(value ,validity) {
+  Register(form) {
 
-    if(!validity){
-      alert("Please enter all fields correctly!");
+    if(form.invalid){
       return;  
     }
     
-    console.log(value);
-    console.log(this.registerForm.value);
     this.router.navigate(['./']);
   }
 

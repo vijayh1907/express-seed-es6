@@ -16,15 +16,12 @@ public requestForm = this.fb.group({
 
   constructor(public router : Router, public fb: FormBuilder) { }
     
-  request(value ,validity) {
-    if(!validity){
-      alert("Please enter all fields correctly!");
-      return;
+  request(form) {
+    if(form.invalid){
+        return;
       
     }
    
-    console.log(value);
-    console.log(this.requestForm.value);
     this.router.navigate(['./']);
   }
 

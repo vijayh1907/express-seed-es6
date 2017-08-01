@@ -17,16 +17,13 @@ public sendForm = this.fb.group({
 
   constructor(public router : Router, public fb: FormBuilder) { }
     
-  send(value ,validity) {
+  send(form) {
     
-    if(!validity){
-      alert("Please enter all fields correctly!");
+    if(form.invalid){
       return;
       
     }
    
-    console.log(value);
-    console.log(this.sendForm.value);
     this.router.navigate(['./']);
   }
 

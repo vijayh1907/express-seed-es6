@@ -18,15 +18,12 @@ export class LoginComponent implements OnInit {
 
   constructor(public router : Router, public fb: FormBuilder) { }
     
-  Login(value ,validity) {
-    if(!validity){
-      alert("Please enter all fields correctly!");
+  Login(form) {
+    if(form.invalid){
       return;
       
     }
-   
-    console.log(value);
-    console.log(this.loginForm.value);
+
     this.router.navigate(['./']);
   }
 

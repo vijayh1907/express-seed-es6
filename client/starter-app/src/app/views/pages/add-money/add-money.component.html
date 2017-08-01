@@ -6,12 +6,11 @@
     <div class = "formcontent">
     <p class = "heading">
 <B>ADD MONEY TO WALLET</B></p>
-<form [formGroup]="addForm" (ngSubmit)="add(addForm.value, addForm.valid)">
+<form [formGroup]="addForm" (ngSubmit)="add(addForm)">
     <input type="text" id="amount" class= "form-control" formControlName="amount" placeholder="Enter amount to be added to wallet" required>
-    <div [hidden]=addForm.controls.amount.pristine>
-    <div [hidden]=addForm.controls.amount.valid class="alert alert-danger">Please enter amount below 10000!</div></div>
+    <div *ngIf="addForm.controls.amount.dirty && addForm.controls.amount.invalid" class="alert alert-danger">Please enter amount below 10000!</div>
     
-    <input type="submit" name="add" class="addButton" value="ADD">
+    <input [disabled]="addForm.invalid" type="submit" name="add" class="addButton" value="ADD">
 </form>
 </div>
 </div>
