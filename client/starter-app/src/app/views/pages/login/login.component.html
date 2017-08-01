@@ -1,3 +1,28 @@
-<p>
-  login works!
-</p>
+ <div class="container">
+    <div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="assets/icon.png" /> <br>
+
+        <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value, loginForm.valid)" class="form-signin">
+              
+            <input type="text" id="inputEmailphone" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required>
+            <div [hidden]=loginForm.controls.emailphone.pristine>
+                <div [hidden]=loginForm.controls.emailphone.valid  class="alert alert-danger">Please enter a valid email or phone number!</div></div>
+            <br>
+
+           <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="Password" required password>
+           <div [hidden]=loginForm.controls.password.pristine>
+                <div [hidden]=loginForm.controls.password.valid class="alert alert-danger">Invalid password! </div></div>
+           <br>
+
+         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Login</button><br>
+        <p class="new">new user? <a routerLink="/"><U>create new account</U></a></p>
+        </form>
+            
+    </div>
+</div> 
+
+
+
+
+     
+

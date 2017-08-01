@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CustomFormsModule } from 'ng2-validation';
 // import {routes} from './app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,7 @@ import { SendMoneyComponent } from './views/pages/send-money/send-money.componen
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +35,15 @@ import { TopNavComponent } from './views/components/top-nav/top-nav.component';
     RequestMoneyComponent,
     SendMoneyComponent,
     NotificationComponent,
-    TopNavComponent
+    TopNavComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    CustomFormsModule,
+    ReactiveFormsModule
     // routes
   ],
   providers: [],

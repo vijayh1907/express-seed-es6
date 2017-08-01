@@ -1,3 +1,25 @@
-<p>
-  request-money works!
-</p>
+
+<div class = "requestmoney">
+
+<div class = "form">
+     <img id="image" class="requestimage" src="assets/request.png" /> 
+    <div class = "formcontent">
+    <p class = "heading">
+<B>REQUEST FOR MONEY</B></p>
+<form [formGroup]="requestForm" (ngSubmit)="request(requestForm.value, requestForm.valid)">
+    
+    <input type="text" id="sender" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required>
+    <div [hidden]=requestForm.controls.emailphone.pristine>
+    <div [hidden]=requestForm.controls.emailphone.valid class="alert alert-danger">Please enter valid email or phone number!</div></div>
+    <br>
+    
+    <input type="text" id="requestamount" class="form-control" formControlName="requestamount" placeholder="Enter amount to be requested">
+    <div [hidden]=requestForm.controls.requestamount.pristine>
+    <div [hidden]=requestForm.controls.requestamount.valid class="alert alert-danger">Please enter amount!</div></div>
+    <br>
+    
+    <input type="submit" name="request" class="requestButton" value="REQUEST">
+</form>
+</div>
+</div>
+</div>
