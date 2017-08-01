@@ -3,12 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { CustomFormsModule } from 'ng2-validation';
-// import {routes} from './app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TransactionHistoryComponent } from './dashboard/transaction-history/transaction-history.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { EWalletComponent } from './views/pages/e-wallet/e-wallet.component';
@@ -27,8 +23,6 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    TransactionHistoryComponent,
     LoginComponent,
     RegisterComponent,
     EWalletComponent,
@@ -47,9 +41,7 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    //CustomFormsModule,
     ReactiveFormsModule
-    // routes
   ],
   providers: [HistoryService],
   bootstrap: [AppComponent]

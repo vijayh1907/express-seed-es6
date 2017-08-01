@@ -10,7 +10,6 @@ import { ProfileComponent } from './views/pages/e-wallet/profile/profile.compone
 import { TransactionComponent } from './views/pages/e-wallet/transaction/transaction.component';
 import { AddMoneyComponent } from './views/pages/add-money/add-money.component';
 import { RequestMoneyComponent } from './views/pages/request-money/request-money.component';
-import { TransactionHistoryComponent } from "./dashboard/transaction-history/transaction-history.component"
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import {HttpClientModule} from '@angular/common/http';

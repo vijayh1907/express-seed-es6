@@ -3,7 +3,7 @@ import { HistoryService } from './history.service';
 
 
 
-export class History{
+class History{
   transaction_id:number;
   sender_name:string;
   amount:number;
@@ -29,12 +29,7 @@ export class TransactionComponent implements OnInit {
 
   title='Transaction History';
   History : any;
-  selectedHistory: History;
-
-  onSelectHistory(history:History){
-  this.selectedHistory=history;
-  };
-  
+    
   // loadTransaction() {
       // this.historyService.getTransactions()
         // .then(data => {this.History = data.transaction; console.log(this.History)});
@@ -44,7 +39,6 @@ export class TransactionComponent implements OnInit {
 
   ngOnInit() {
     // this.loadTransaction();
-    // console.log(HISTORY);
   }
 
 }
