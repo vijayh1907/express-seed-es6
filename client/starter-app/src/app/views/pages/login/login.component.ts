@@ -19,11 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(public router : Router, public fb: FormBuilder) { }
     
   Login(form) {
-    if(form.invalid){
-      return;
-      
-    }
-
+    
     this.router.navigate(['./']);
   }
 

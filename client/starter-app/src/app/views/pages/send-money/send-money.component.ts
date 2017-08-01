@@ -19,11 +19,6 @@ public sendForm = this.fb.group({
     
   send(form) {
     
-    if(form.invalid){
-      return;
-      
-    }
-   
     this.router.navigate(['./']);
   }
 

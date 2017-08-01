@@ -16,11 +16,7 @@ export class AddMoneyComponent implements OnInit {
   constructor(public router : Router, public fb: FormBuilder) { }
     
   add(form) {
-    
-    if(form.invalid){
-      return;
-      }
-    
+     
   this.router.navigate(['./']);
   }
 

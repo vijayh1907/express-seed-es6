@@ -22,10 +22,6 @@ export class RegisterComponent implements OnInit {
   ) { }
     
   Register(form) {
-
-    if(form.invalid){
-      return;  
-    }
     
     this.router.navigate(['./']);
   }

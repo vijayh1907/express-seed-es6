@@ -17,10 +17,6 @@ public requestForm = this.fb.group({
   constructor(public router : Router, public fb: FormBuilder) { }
     
   request(form) {
-    if(form.invalid){
-        return;
-      
-    }
    
     this.router.navigate(['./']);
   }
