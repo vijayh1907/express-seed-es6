@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { CustomFormsModule } from 'ng2-validation';
+//import { CustomFormsModule } from 'ng2-validation';
 // import {routes} from './app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,7 +47,7 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    CustomFormsModule,
+    //CustomFormsModule,
     ReactiveFormsModule
     // routes
   ],
