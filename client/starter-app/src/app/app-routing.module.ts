@@ -17,19 +17,12 @@ import {HttpClientModule} from '@angular/common/http';
 // import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 
  const routes: Routes = [
-  // {
-   // { path: '', redirectTo: 'about', pathMatch: 'full' }
-   // children: []
-  // }
-  {path: '', redirectTo: 'transactions', pathMatch: 'full'},
-    // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    // { path: '', redirectTo: 'ewallet', pathMatch: 'full' },
-  { path: 'ewallet', component: EWalletComponent },    
-  { path: 'addMoney', component: AddMoneyComponent },
-  { path: 'requestMoney', component: RequestMoneyComponent },
-  { path: 'sendMoney', component: SendMoneyComponent },
-  { path: 'notification', component: NotificationComponent },
-  { path: 'transactions', component: TransactionHistoryComponent }
+   
+  { path:'',redirectTo:'transaction', pathMatch:'full'},
+  { path: 'transaction', component: TransactionComponent},
+  { path: 'add-money', component: AddMoneyComponent},
+  { path: 'send-money', component: SendMoneyComponent},
+  { path: 'request-money', component: RequestMoneyComponent}
 ];
 
 @NgModule({

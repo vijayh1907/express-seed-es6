@@ -17,7 +17,9 @@ import { RequestMoneyComponent } from './views/pages/request-money/request-money
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
-import { HistoryService } from './dashboard/transaction-history/history.service';
+import { HistoryService } from './views/pages/e-wallet/transaction/history.service';
+import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
+import { SideBarComponent } from './views/components/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HistoryService } from './dashboard/transaction-history/history.service'
     RequestMoneyComponent,
     SendMoneyComponent,
     NotificationComponent,
-    TopNavComponent
+    TopNavComponent,
+    NavTabsComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
