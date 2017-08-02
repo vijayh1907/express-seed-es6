@@ -14,7 +14,6 @@ export class AddMoneyService {
   	) { }
 
   addBalance(data) {
-  	console.log(data, "api call")
   	return this.http.post(this.serverURL, data)
   	.map(res => res.json());
   }	  

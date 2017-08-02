@@ -29,10 +29,8 @@ export class AddMoneyComponent implements OnInit {
     ) { }
 
   add(form) {  
-    console.log(form._value);
     if((form._value.wallet_amount+this.balance) > 25000){
       this.valid = false;
-      console.log(form._value.wallet_amount+this.balance);
     } else {
       this.valid=true;
       this.createObj(form._value.wallet_amount)
@@ -45,7 +43,6 @@ export class AddMoneyComponent implements OnInit {
       wallet_amount : val
     }
     this.addMoney(obj);
-    //console.log(obj,"this the object created");
   }
 
   addMoney(value){
