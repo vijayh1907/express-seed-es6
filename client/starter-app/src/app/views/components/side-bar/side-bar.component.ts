@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BalanceService} from '../../../balance.service';
+import { Subscription } from 'rxjs/Subscription';
+
 
 @Component({
   selector: 'app-side-bar',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor() { }
+  balance : any;
+  subscription : Subscription;
+
+  constructor(
+  	public balanceService : BalanceService
+  	) { this.subscription = this.balanceService.getBalance().subscribe(balance => this.balance = balance)}
 
   ngOnInit() {
+  	
   }
+
+  ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+
 
 }

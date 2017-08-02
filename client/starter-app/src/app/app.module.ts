@@ -19,8 +19,12 @@ import { HistoryService } from './views/pages/e-wallet/transaction/history.servi
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
 import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
+import { AddMoneyService } from './views/pages/add-money/add-money.service';
+import { BalanceService } from './balance.service';
 import { RegisterService } from './views/pages/register/register.service'
 import { LoginService } from './views/pages/login/login.service'
+import { SendMoneyService } from './views/pages/send-money/send-money.service'
+
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ import { LoginService } from './views/pages/login/login.service'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [HistoryService, RegisterService, LoginService],
+
+  providers: [HistoryService, AddMoneyService, BalanceService, RegisterService, LoginService, SendMoneyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

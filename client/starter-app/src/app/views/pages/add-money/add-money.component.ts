@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AddMoneyService } from './add-money.service';
+import { BalanceService} from '../../../balance.service';
+
 
 @Component({
   selector: 'app-add-money',
@@ -10,14 +13,44 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AddMoneyComponent implements OnInit {
 
   public addForm = this.fb.group({
-     amount: ["",[ Validators.required, Validators.pattern("^(?:10000)$|^([1-9])$|^([1-9][0-9])$|^([1-9][0-9][0-9])$|^([1-9][0-9][0-9][0-9])$")]]
+     wallet_amount: ["",[ Validators.required, Validators.pattern("^(?:10000)$|^([1-9])$|^([1-9][0-9])$|^([1-9][0-9][0-9])$|^([1-9][0-9][0-9][0-9])$")]]
   });
 
-  constructor(public router : Router, public fb: FormBuilder) { }
-    
-  add(form) {
-     
-  this.router.navigate(['./']);
+  valid = true;
+  show = true;
+  balance = 20511;
+  customer_id = 70;
+
+  constructor(
+    public router: Router,
+    public fb: FormBuilder,
+    public addMoneyService: AddMoneyService,
+    public balanceService: BalanceService
+    ) { }
+
+  add(form) {  
+    if((form._value.wallet_amount+this.balance) > 25000){
+      this.valid = false;
+    } else {
+      this.valid=true;
+      this.createObj(form._value.wallet_amount)
+    }
+  }
+
+  createObj(val) {
+    let obj= {
+      customer_id : this.customer_id,
+      wallet_amount : val
+    }
+    this.addMoney(obj);
+  }
+
+  addMoney(value){
+    this.addMoneyService.addBalance(value)
+    .subscribe(data => {
+      this.balanceService.updateBalance(data.wallet_amount);
+      this.show = false;
+    });
   }
 
 ngOnInit() {
