@@ -19,6 +19,8 @@ import { HistoryService } from './views/pages/e-wallet/transaction/history.servi
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
 import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
+import { AddMoneyService } from './views/pages/add-money/add-money.service';
+import { BalanceService } from './balance.service';
 
 
 @NgModule({
@@ -45,7 +47,7 @@ import { DashboardComponent } from './views/pages/dashboard/dashboard.component'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [HistoryService],
+  providers: [HistoryService, AddMoneyService, BalanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
