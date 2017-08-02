@@ -32,7 +32,6 @@ validity = true;
 
   checkUserValid(user: any) {
     if (user.data) {
-      console.log(user,"response data");
         this.router.navigate(['./dashboard']);
         this.validity = true;
       } else {
