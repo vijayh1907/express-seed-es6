@@ -20,12 +20,10 @@ public sendForm = this.fb.group({
     public router : Router, public fb: FormBuilder) { }
     
   send(form) {
-    console.log("here in send");
     this.router.navigate(['./']);
   }
 
-postFunction(data)
-{ console.log("here in postFunciton");
+postFunction(data) {
   this.sendMoneyService.postRegister(data)
     .subscribe(data => {
       this.data = JSON.stringify(data);  
