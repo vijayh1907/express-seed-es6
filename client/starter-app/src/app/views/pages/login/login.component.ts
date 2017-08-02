@@ -11,12 +11,11 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent implements OnInit {
 responseData : any;
-body={};
 validity = true;
 
   public loginForm = this.fb.group({
-    emailphone: ["",[ Validators.required, Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$|\\d{10}/)]],
-    password: ["", Validators.required]
+    customer_email: ["",[ Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$|\\d{10}")]],
+    customer_password: ["", Validators.required]
   });
 
   constructor(
@@ -24,22 +23,19 @@ validity = true;
     public fb: FormBuilder,
     private loginService: LoginService) { }
 
-  Login(body) {
-    console.log("tsbody",body)
-    this.loginService.postLoginData(body)
+  Login(form) {
+    this.loginService.postLoginData(form._value)
     .subscribe(data => {
       this.checkUserValid(data);
-      //console.log(this.responseData ,"data");
     });
   }
 
   checkUserValid(user: any) {
     if (user.data) {
+      console.log(user,"response data");
         this.router.navigate(['./dashboard']);
         this.validity = true;
-        //console.log(this.responseData.data, 'data');
       } else {
-        console.log("user not found");
         this.validity = false;
       }
   }

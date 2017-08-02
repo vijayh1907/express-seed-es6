@@ -8,15 +8,14 @@ import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class LoginService {
+  private serverURL = 'http://10.0.1.62:8080/api/customer/login';
 
-  constructor(private http:Http) { }
 
-  postLoginData(body) {
-    console.log("body",body)
-    return this.http.post('http://10.0.1.62:8080/api/customer/login',body)
+  constructor(private http: Http) { }
+
+  postLoginData(data) {
+    return this.http.post(this.serverURL , data)
     .map(res => res.json());
-  }
-    
-}
+  }  }
 
 
