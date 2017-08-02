@@ -18,11 +18,11 @@ import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 import { HistoryService } from './views/pages/e-wallet/transaction/history.service';
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
-
 import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
-import { LoginService } from './views/pages/login/login.services';
 import { RegisterService } from './views/pages/register/register.service';
+import { LoginService } from './views/pages/login/login.service';
 import { send_moneyService } from './views/pages/send-money/send-money.service'
+
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { send_moneyService } from './views/pages/send-money/send-money.service'
     AppRoutingModule,
     ReactiveFormsModule
   ],
+
   providers: [LoginService,HistoryService,RegisterService,send_moneyService],
   bootstrap: [AppComponent]
 })

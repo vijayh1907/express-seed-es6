@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from './register.service';
+<<<<<<< HEAD
 import { PasswordValidation } from './password-validation';
+=======
+>>>>>>> b9767c3e229c288fbe8fb80a3c022e65bae64014
 
 @Component({
   selector: 'app-register',
@@ -27,12 +30,21 @@ registerPostData={};
 
   constructor(private _registerService: RegisterService,
     public router : Router,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private registerService: RegisterService
   ) { }
+<<<<<<< HEAD
     
  
 postFunction(registerPostData)
 {
+=======
+
+  Register(form) {
+    
+     this.router.navigate(['./']);
+  }
+>>>>>>> b9767c3e229c288fbe8fb80a3c022e65bae64014
 
   this._registerService.postRegister(registerPostData)
     .subscribe(data => {
@@ -52,5 +64,9 @@ postFunction(registerPostData)
     
   }
 
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> b9767c3e229c288fbe8fb80a3c022e65bae64014

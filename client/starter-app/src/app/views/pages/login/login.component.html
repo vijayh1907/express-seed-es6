@@ -4,16 +4,20 @@
 
         <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm)" class="form-signin">
 
-            <input type="text" id="inputEmailphone" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required>
-            <div *ngIf="loginForm.controls.emailphone.invalid&&loginForm.controls.emailphone.dirty" class="alert alert-danger">Please enter a valid email or phone number!</div>
+
+            <input type="text" id="inputEmailphone" formControlName="customer_email" class="form-control" placeholder="Email address/Phone no." required>
+            <div *ngIf="loginForm.controls.customer_email.invalid&&loginForm.controls.customer_email.dirty" class="alert alert-danger">Please enter a valid email or phone number!</div>
+            <br>
+            <input type="password" id="inputPassword" formControlName="customer_password" class="form-control" placeholder="Password" required password>
+            <div *ngIf="loginForm.controls.customer_password.invalid&&loginForm.controls.customer_password.dirty" class="alert alert-danger">Please enter a password! </div>
             <br>
 
-            <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="Password" required password>
-            <div *ngIf="loginForm.controls.password.invalid&&loginForm.controls.password.dirty" class="alert alert-danger">Invalid password! </div>
+            <button [disabled]=loginForm.invalid class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+            <div [hidden]="validity" class="alert alert-danger">Not a valid user? Please register.</div>
             <br>
 
-            <button [disabled]=loginForm.invalid class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button><br>
-            <p class="new">new user? <a routerLink="/"><U>create new account</U></a></p>
+            <p class="new">new user? <a routerLink="/register"><U>create new account</U></a></p>
+
         </form>
 
     </div>
