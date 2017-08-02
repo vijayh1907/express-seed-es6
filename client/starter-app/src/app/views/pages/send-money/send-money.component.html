@@ -10,7 +10,7 @@
     <div *ngIf="sendForm.controls.emailphone.dirty&&sendForm.controls.emailphone.invalid" class="alert alert-danger">Please enter valid email or phone number!</div>
     <br>
 
-    <input type="text" id="sendamount" class="form-control" formControlName="sendamount" placeholder="Enter amount to be sent">
+    <input type="number" id="sendamount" class="form-control" formControlName="sendamount" placeholder="Enter amount to be sent">
     <div *ngIf="sendForm.controls.sendamount.dirty&&sendForm.controls.sendamount.invalid" class="alert alert-danger">Please enter amount below 10000!</div>
     <br>
 	<input [disabled]=sendForm.invalid type="submit" name="send" class="sendButton" value="SEND">

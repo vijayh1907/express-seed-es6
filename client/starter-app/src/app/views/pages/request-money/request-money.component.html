@@ -12,7 +12,7 @@
     <div *ngIf="requestForm.controls.emailphone.invalid&&requestForm.controls.emailphone.dirty" class="alert alert-danger">Please enter valid email or phone number!</div>
     <br>
     
-    <input type="text" id="requestamount" class="form-control" formControlName="requestamount" placeholder="Enter amount to be requested">
+    <input type="number" id="requestamount" class="form-control" formControlName="requestamount" placeholder="Enter amount to be requested">
     <div *ngIf="requestForm.controls.requestamount.invalid&&requestForm.controls.requestamount.dirty" class="alert alert-danger">Please enter amount!</div>
     <br>
     

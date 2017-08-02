@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { RequestService } from './request.service';
+
 
 @Component({
   selector: 'app-request-money',
@@ -8,17 +10,22 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./request-money.component.scss']
 })
 export class RequestMoneyComponent implements OnInit {
-
+private val: any;
 public requestForm = this.fb.group({
-    emailphone: ["",[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|^(\\d{10})$")]],
-    requestamount: ["",[ Validators.required, Validators.pattern("^(\\d{1,})$")]]
+    emailphone: ['',[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|^(\\d{10})$")]],
+    requestamount: ['',[ Validators.required, Validators.pattern("^(\\d{1,})$")]]
   });
 
-  constructor(public router : Router, public fb: FormBuilder) { }
-    
+  constructor(
+    public router: Router,
+    public fb: FormBuilder,
+    private requestService: RequestService) { }
+
   request(form) {
-   
-    this.router.navigate(['./']);
+   this.requestService.postRequestData(form._value)
+   .subscribe(data => this.val = data);
+  
+   this.router.navigate(['./']);
   }
 
 ngOnInit() {

@@ -10,7 +10,6 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-responseData : any;
 validity = true;
 
   public loginForm = this.fb.group({
