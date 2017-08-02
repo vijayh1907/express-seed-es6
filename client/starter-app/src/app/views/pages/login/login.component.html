@@ -2,18 +2,20 @@
     <div class="card card-container">
     <img id="profile-img" class="profile-img-card" src="assets/icon.png" /> <br>
 
-        <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm)" class="form-signin">
+        <form [formGroup]="loginForm" (ngSubmit)="Login(body)" class="form-signin">
               
-            <input type="text" id="inputEmailphone" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." required>
+            <input type="text" id="inputEmailphone" formControlName="emailphone" class="form-control" placeholder="Email address/Phone no." [(ngModel)]= "body.customer_email" required>
                 <div *ngIf="loginForm.controls.emailphone.invalid&&loginForm.controls.emailphone.dirty"  class="alert alert-danger">Please enter a valid email or phone number!</div>
             <br>
-
-           <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="Password" required password>
+           <input type="password" id="inputPassword" formControlName="password" class="form-control" placeholder="Password"   [(ngModel)]= "body.customer_password" required password>
                 <div *ngIf="loginForm.controls.password.invalid&&loginForm.controls.password.dirty" class="alert alert-danger">Invalid password! </div>
            <br>
 
-         <button [disabled]=loginForm.invalid class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Login</button><br>
-        <p class="new">new user? <a routerLink="/"><U>create new account</U></a></p>
+         <button [disabled]=loginForm.invalid class="btn btn-lg btn-primary btn-block btn-signin" type="submit" >Login</button>
+        <div [hidden]="validity" class="alert alert-danger">Not a valid user? Please register.</div>
+         <br>
+
+        <p class="new">new user? <a routerLink="/register"><U>create new account</U></a></p>
         </form>
             
     </div>
