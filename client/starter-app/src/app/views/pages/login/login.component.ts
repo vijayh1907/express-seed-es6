@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     
   Login(form) {
     
-    this.router.navigate(['./']);
+    this.router.navigate(['./dashboard']);
   }
 
 ngOnInit() {

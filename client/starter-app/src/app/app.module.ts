@@ -3,12 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { CustomFormsModule } from 'ng2-validation';
-// import {routes} from './app-routing.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TransactionHistoryComponent } from './dashboard/transaction-history/transaction-history.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { EWalletComponent } from './views/pages/e-wallet/e-wallet.component';
@@ -19,19 +15,16 @@ import { RequestMoneyComponent } from './views/pages/request-money/request-money
 import { SendMoneyComponent } from './views/pages/send-money/send-money.component';
 import { NotificationComponent } from './views/pages/notification/notification.component';
 import { TopNavComponent } from './views/components/top-nav/top-nav.component';
+import { HistoryService } from './views/pages/e-wallet/transaction/history.service';
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
-<<<<<<< Updated upstream
 
-
-=======
+import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
 import { LoginService } from './views/pages/login/login.services';
->>>>>>> Stashed changes
+
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    TransactionHistoryComponent,
     LoginComponent,
     RegisterComponent,
     EWalletComponent,
@@ -43,18 +36,17 @@ import { LoginService } from './views/pages/login/login.services';
     NotificationComponent,
     TopNavComponent,
     NavTabsComponent,
-    SideBarComponent
+    SideBarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    CustomFormsModule,
     ReactiveFormsModule
-    // routes
   ],
-  providers: [LoginService],
+  providers: [LoginService,HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
