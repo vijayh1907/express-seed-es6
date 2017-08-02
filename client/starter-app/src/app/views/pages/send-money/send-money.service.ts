@@ -3,16 +3,17 @@ import {  Http,Response,Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class RegisterService {
+export class send_moneyService {
 
   constructor(private _http : Http) { }
 
 
-   postRegister(registerPostData){
+   postRegister(send_moneyPostData){
 
-       return this._http.post('http://10.0.1.62:8080/api/customer/add',registerPostData)
+       return this._http.post('http://10.0.1.62:8080/api/customer/add',send_moneyPostData)
         .map((response:Response) => response.json());
        
+        
     }
 
 }

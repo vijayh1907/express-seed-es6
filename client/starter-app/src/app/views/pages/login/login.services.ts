@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class LoginService {
     private _url : string = "login.json";
-    // private _purl:string  = "http://validate.testjson.com";
     constructor(private _http:Http){}
 
 

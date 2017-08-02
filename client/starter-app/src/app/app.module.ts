@@ -21,6 +21,8 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
 
 import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
 import { LoginService } from './views/pages/login/login.services';
+import { RegisterService } from './views/pages/register/register.service';
+import { send_moneyService } from './views/pages/send-money/send-money.service'
 
 @NgModule({
   declarations: [
@@ -46,7 +48,7 @@ import { LoginService } from './views/pages/login/login.services';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService,HistoryService],
+  providers: [LoginService,HistoryService,RegisterService,send_moneyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
