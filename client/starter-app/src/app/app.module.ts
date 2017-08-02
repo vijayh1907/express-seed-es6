@@ -18,6 +18,7 @@ import { TopNavComponent } from './views/components/top-nav/top-nav.component';
 import { HistoryService } from './views/pages/e-wallet/transaction/history.service';
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
+import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SideBarComponent } from './views/components/side-bar/side-bar.component
     NotificationComponent,
     TopNavComponent,
     NavTabsComponent,
-    SideBarComponent
+    SideBarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
