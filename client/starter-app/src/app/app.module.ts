@@ -23,6 +23,8 @@ import { AddMoneyService } from './views/pages/add-money/add-money.service';
 import { BalanceService } from './balance.service';
 import { RegisterService } from './views/pages/register/register.service'
 import { LoginService } from './views/pages/login/login.service'
+import { SendMoneyService } from './views/pages/send-money/send-money.service'
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { LoginService } from './views/pages/login/login.service'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [HistoryService, AddMoneyService, BalanceService, RegisterService, LoginService],
+
+  providers: [HistoryService, AddMoneyService, BalanceService, RegisterService, LoginService, SendMoneyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
