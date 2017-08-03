@@ -15,17 +15,17 @@ export class SideBarComponent implements OnInit {
   subscription : Subscription;
 
   constructor(
-  	public balanceService: BalanceService,
+    public balanceService: BalanceService,
     public customerIdService: CustomerIdService
-  	) { this.subscription = this.balanceService.getBalance().subscribe(balance => this.balance = balance);}
+    ) { this.subscription = this.balanceService.getBalance().subscribe(balance => this.balance = balance);}
 
   ngOnInit() {
-     this.balance = this.customerIdService.getBalance();  	
+     this.balance = this.customerIdService.getBalance()
   }
   
   ngOnDestroy() {
-        this.subscription.unsubscribe();
-    }
+        this.subscription.unsubscribe();
+  }
 
 
 }
