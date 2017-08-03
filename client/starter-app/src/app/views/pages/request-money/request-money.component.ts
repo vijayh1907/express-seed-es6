@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { RequestService } from './request.service';
+import { RequestMoneyService } from './request-money.service';
 import { CustomerIdService } from '../../../customer-id.service';
 
 
@@ -13,7 +13,6 @@ import { CustomerIdService } from '../../../customer-id.service';
 })
 export class RequestMoneyComponent implements OnInit {
 private val: any;
-private vals: any;
 valid = true;
 
 public requestForm = this.fb.group({
@@ -24,7 +23,7 @@ public requestForm = this.fb.group({
   constructor(
     public router: Router,
     public fb: FormBuilder,
-    private requestService: RequestService,
+    private requestService: RequestMoneyService,
     public customerIdService: CustomerIdService) { }
 
     customer_id = this.customerIdService.getUser();

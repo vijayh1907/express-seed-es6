@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { RequestService } from './request.service';
+import { RequestMoneyService } from './request-money.service';
 
 describe('RequestService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [RequestService]
+      providers: [RequestMoneyService]
     });
   });
 
-  it('should ...', inject([RequestService], (service: RequestService) => {
+  it('should ...', inject([RequestMoneyService], (service: RequestMoneyService) => {
     expect(service).toBeTruthy();
   }));
 });

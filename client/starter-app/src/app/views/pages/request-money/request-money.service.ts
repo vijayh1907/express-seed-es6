@@ -7,13 +7,12 @@ import { Http, Response } from '@angular/http';
 
 
 @Injectable()
-export class RequestService {
+export class RequestMoneyService {
    private serverURL = 'http://10.0.1.62:8080/api/';
 
   constructor(private http: Http) { }
 
   postRequestData(data) {
-    console.log(data, "before post");
     return this.http.post(this.serverURL + 'customer/request' , data)
     .map(res => res.json())
     .catch(err => 'Error');
