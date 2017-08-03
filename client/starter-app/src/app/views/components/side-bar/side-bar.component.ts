@@ -20,7 +20,7 @@ export class SideBarComponent implements OnInit {
     ) { this.subscription = this.balanceService.getBalance().subscribe(balance => this.balance = balance);}
 
   ngOnInit() {
-     this.balance = this.customerIdService.getBalance();    
+     this.balance = this.customerIdService.getBalance()
   }
   
   ngOnDestroy() {
