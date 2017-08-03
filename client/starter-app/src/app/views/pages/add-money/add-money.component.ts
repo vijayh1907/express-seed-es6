@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AddMoneyService } from './add-money.service';
 import { BalanceService} from '../../../balance.service';
+import { CustomerIdService } from '../../../customer-id.service';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -18,22 +20,26 @@ export class AddMoneyComponent implements OnInit {
 
   valid = true;
   show = true;
-  balance = 20511;
-  customer_id = 70;
+  balance = null;
+  subscription : Subscription;
 
   constructor(
     public router: Router,
     public fb: FormBuilder,
     public addMoneyService: AddMoneyService,
-    public balanceService: BalanceService
-    ) { }
+    public balanceService: BalanceService,
+    public customerIdService: CustomerIdService
+    ) { this.subscription = this.balanceService.getBalance().subscribe(balance => this.balance = balance); }
 
-  add(form) {  
-    if((form._value.wallet_amount+this.balance) > 25000){
+  customer_id = this.customerIdService.getUser();
+
+  add(form) {
+    if((form._value.wallet_amount + this.balance) > 25000) {
       this.valid = false;
+      this.show = true;
     } else {
-      this.valid=true;
-      this.createObj(form._value.wallet_amount)
+      this.valid = true;
+      this.createObj(form._value.wallet_amount);
     }
   }
 
@@ -56,4 +62,4 @@ export class AddMoneyComponent implements OnInit {
 ngOnInit() {
   }
 
-}  
+}

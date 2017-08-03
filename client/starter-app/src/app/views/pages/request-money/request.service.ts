@@ -13,6 +13,7 @@ export class RequestService {
   constructor(private http: Http) { }
 
   postRequestData(data) {
+    console.log(data, "before post");
     return this.http.post(this.serverURL + 'customer/request' , data)
     .map(res => res.json())
     .catch(err => 'Error');

@@ -26,8 +26,9 @@
             <br>
 
             <button [disabled]=registerForm.invalid class="btn btn-lg btn-primary btn-block btn-register" type="submit">Register</button><br>
-            <!-- <div [hidden]="emailphone_exist" class="alert alert-danger">Email OR phonr number already exist please enter a new one</div> -->
-            <p class="login">already registered? <a routerLink="/"><U>Login</U></a></p>
+             <div [hidden]="valid" class="alert alert-danger">Email OR phone number already exist please enter a new one.</div>
+             <div [hidden]="show" class="alert alert-danger">Oops!! Something went wrong!</div> 
+            <p class="login">Already registered? <a routerLink="/"><U>Login</U></a></p>
         </form>
         <!-- /form -->
 

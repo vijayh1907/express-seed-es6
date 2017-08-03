@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RequestService } from './request.service';
+import { CustomerIdService } from '../../../customer-id.service';
+
 
 
 @Component({
@@ -11,21 +13,47 @@ import { RequestService } from './request.service';
 })
 export class RequestMoneyComponent implements OnInit {
 private val: any;
+private vals: any;
+valid = true;
+
 public requestForm = this.fb.group({
-    requested_from: ['',[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|^(\\d{10})$")]],
+    requested_from: ['',[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|\\d{10}")]],
     amount: ['',[ Validators.required, Validators.pattern("^(\\d{1,})$")]]
   });
 
   constructor(
     public router: Router,
     public fb: FormBuilder,
-    private requestService: RequestService) { }
+    private requestService: RequestService,
+    public customerIdService: CustomerIdService) { }
+
+    customer_id = this.customerIdService.getUser();
 
   request(form) {
-   this.requestService.postRequestData(form._value)
-   .subscribe(data => this.val = data);
-   this.router.navigate(['./']);
+    this.createObj(form._value);
   }
+
+  createObj(val) {
+    let obj= {
+      customer_id : this.customer_id,
+      requested_from : val.requested_from,
+      amount : val.amount
+    }
+    this.requestMoney(obj);
+  }
+
+  requestMoney(value){
+    this.requestService.postRequestData(value)
+    .subscribe(data => {
+      if (data.sender_id){
+        this.valid = false;
+      }
+      else {
+        this.valid = true;
+      }
+    });
+  }
+
 
 ngOnInit() {
   }

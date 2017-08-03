@@ -25,6 +25,7 @@ import { BalanceService } from './balance.service';
 import { RegisterService } from './views/pages/register/register.service';
 import { LoginService } from './views/pages/login/login.service';
 import { SendMoneyService } from './views/pages/send-money/send-money.service';
+import { CustomerIdService} from './customer-id.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SendMoneyService } from './views/pages/send-money/send-money.service';
     RequestService,
     AddMoneyService,
     BalanceService,
-    SendMoneyService
+    SendMoneyService,
+    CustomerIdService
   ],
  bootstrap: [AppComponent]
 })
