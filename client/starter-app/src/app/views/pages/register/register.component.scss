@@ -1,12 +1,13 @@
 /*
  * Specific styles of signin component
  */
+
+
 /*
  * General styles
  */
 
-
-.card-container.card{
+.card-container.card {
     background-size: contain;
     max-width: 550px;
     padding: 40px 40px;
@@ -21,9 +22,11 @@
     cursor: default;
 }
 
+
 /*
  * Card component
  */
+
 .card {
     background-color: #34495E;
     /* just in case there no content*/
@@ -48,9 +51,11 @@
     border-radius: 50%;
 }
 
+
 /*
  * Form styles
  */
+
 .profile-name-card {
     font-size: 16px;
     font-weight: bold;
@@ -59,16 +64,15 @@
     min-height: 1em;
 }
 
-
 .form-register #inputEmail,
 .form-register #inputName,
 .form-register #inputPhone,
-.form-register #inputPassword {
+.form-register #inputPassword,
+.form-register #confirmPassword {
     direction: ltr;
     height: 44px;
     font-size: 16px;
 }
-
 
 .form-register input[type=password],
 .form-register input[type=email],
@@ -87,8 +91,8 @@
 .form-register .form-control:focus {
     border-color: rgb(104, 145, 162);
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(104, 145, 162);
 }
 
 .btn.btn-register {
@@ -109,9 +113,8 @@
     transition: all 0.218s;
 }
 
-.login, a{
+.login,
+a {
     color: white;
     font-size: 17px;
 }
-
-

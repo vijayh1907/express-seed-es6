@@ -12,8 +12,8 @@ import { RequestService } from './request.service';
 export class RequestMoneyComponent implements OnInit {
 private val: any;
 public requestForm = this.fb.group({
-    emailphone: ['',[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|^(\\d{10})$")]],
-    requestamount: ['',[ Validators.required, Validators.pattern("^(\\d{1,})$")]]
+    requested_from: ['',[ Validators.required, Validators.pattern("(^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)|^(\\d{10})$")]],
+    amount: ['',[ Validators.required, Validators.pattern("^(\\d{1,})$")]]
   });
 
   constructor(
@@ -24,7 +24,6 @@ public requestForm = this.fb.group({
   request(form) {
    this.requestService.postRequestData(form._value)
    .subscribe(data => this.val = data);
-  
    this.router.navigate(['./']);
   }
 

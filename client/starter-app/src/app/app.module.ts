@@ -19,9 +19,12 @@ import { HistoryService } from './views/pages/e-wallet/transaction/history.servi
 import { NavTabsComponent } from './views/components/nav-tabs/nav-tabs.component';
 import { SideBarComponent } from './views/components/side-bar/side-bar.component';
 import { DashboardComponent } from './views/pages/dashboard/dashboard.component';
+import { RequestService } from './views/pages/request-money/request.service';
+import { AddMoneyService } from './views/pages/add-money/add-money.service';
+import { BalanceService } from './balance.service';
 import { RegisterService } from './views/pages/register/register.service';
 import { LoginService } from './views/pages/login/login.service';
-import { RequestService } from './views/pages/request-money/request.service';
+import { SendMoneyService } from './views/pages/send-money/send-money.service';
 
 @NgModule({
   declarations: [
@@ -51,8 +54,11 @@ import { RequestService } from './views/pages/request-money/request.service';
     HistoryService,
     RegisterService,
     LoginService,
-    RequestService
+    RequestService,
+    AddMoneyService,
+    BalanceService,
+    SendMoneyService
   ],
-  bootstrap: [AppComponent]
+ bootstrap: [AppComponent]
 })
 export class AppModule { }

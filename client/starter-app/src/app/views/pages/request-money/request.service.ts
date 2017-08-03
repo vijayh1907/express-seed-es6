@@ -13,7 +13,7 @@ export class RequestService {
   constructor(private http: Http) { }
 
   postRequestData(data) {
-    return this.http.post(this.serverURL + '' , data)
+    return this.http.post(this.serverURL + 'customer/request' , data)
     .map(res => res.json())
     .catch(err => 'Error');
   }  }
