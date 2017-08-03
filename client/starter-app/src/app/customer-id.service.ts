@@ -10,7 +10,6 @@ export class CustomerIdService {
 
   setUser(id) {
   	this.userID = id;
-  	console.log(this.userID);
   }
 
   setBalance(balance) {
