@@ -42,7 +42,7 @@ postFunction(registerPostData)
 
   this._registerService.postRegister(registerPostData)
     .subscribe(
-      data => {console.log(data);
+      data => {
          this.router.navigate(['./login']);
       },
       err => {
