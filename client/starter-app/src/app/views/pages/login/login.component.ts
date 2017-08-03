@@ -37,7 +37,6 @@ validity = true;
   }
 
   checkUserValid(user: any) {
-    console.log(user);
     if (user.customer_id) {
         this.customerIdService.setUser(user.customer_id);
         this.customerIdService.setBalance(user.wallet_amount.wallet_amount);
