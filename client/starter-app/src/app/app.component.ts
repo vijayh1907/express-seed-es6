@@ -9,8 +9,10 @@ import { Http, Response } from '@angular/http';
 })
 export class AppComponent {
 
-  title = 'app works!!!!!!!!!!';
+  title = 'E-Wallet Dashboard';
   httpResponse:any;
+  result = true;
+  
 
   constructor(private http:Http){
 
@@ -24,3 +26,5 @@ export class AppComponent {
   }
 
 }
+
+

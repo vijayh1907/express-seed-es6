@@ -1,0 +1,108 @@
+.nav-tabs {
+    border-bottom: 2px solid #DDD;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    border-width: 0;
+}
+
+.nav-tabs>li>a {
+    border: none;
+    color: #ffffff;
+    background: #34495E;
+    height: 40px;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li>a:hover {
+    border: none;
+    color: #34495E !important;
+    background: #fff;
+}
+
+.nav-tabs>li>a::after {
+    content: "";
+    background: #34495E;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    transition: all 250ms ease 0s;
+    transform: scale(0);
+}
+
+.nav-tabs>li.active>a::after,
+.nav-tabs>li:hover>a::after {
+    transform: scale(1);
+}
+
+.tab-nav>li>a::after {
+    background: #34495E none repeat scroll 0% 0%;
+    color: #fff;
+}
+
+.tab-pane {
+    padding: 15px 0;
+}
+
+.tab-content {
+    padding: 20px
+}
+
+.nav-tabs>li {
+    width: 25%;
+    text-align: center;
+}
+
+.card {
+    background: #FFF none repeat scroll 0% 0%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    margin-left: 4%;
+}
+
+body {
+    background: #EDECEC;
+    padding: 50px
+}
+
+.nav>li>a {
+    padding: 0px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    // padding: 18px 15px;
+}
+
+.tabsmain-width {
+    width: 99%;
+}
+
+.container {
+    width: 100%;
+}
+
+.nav-tabs>li>a {
+    margin-right: 0px;
+}
+
+.nav-tabs>li>a {
+    margin-right: 3px;
+}
+
+.nav-tabs-content {
+    position: relative;
+    top: 8px;
+}
+
+@media (min-width: 0px) and (max-width:510px) {
+    .nav-tabs-content {
+        position: relative;
+        top: 3px;
+    }
+}

@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+.sendmoney{
+ text-align: center;
+}
+
+.form{
+
+  padding: 30px;
+  max-width: 700px;
+  background-size: contain;
+  width: 100% !important;
+  background-color: #34495E;
+  margin: 100px auto auto auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+  border-radius: 6px;
+}
+
+.sendimage {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.sendButton{
+    color: #ffffff;
+    background-color: #e1333c;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
+    margin-top: 10px;
+//   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.formcontent{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+
+
+.heading{
+    font-size: 30px;
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+
+#sendamount, #receiver{
+    width: 100%;
+    height: 50px;
+    border-radius: 2px;
+    padding: 5px;
+    border: none;
+    margin-bottom: 10px;
+
+}
